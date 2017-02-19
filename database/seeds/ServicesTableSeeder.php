@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use \App\User;
-class UserTableSeeder extends Seeder
+use \App\Services;
+class ServicesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class)->times(10)->create();
+        factory(Services::class)->times(1000)->create();
+        
     }
 }

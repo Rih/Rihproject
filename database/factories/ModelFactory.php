@@ -19,6 +19,20 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
+        'type' => $faker->randomElement(['admin', 'user']),
         'remember_token' => str_random(10),
+    ];
+});
+
+
+
+$factory->define(App\Services::class, function (Faker\Generator $faker) {
+/*
+            $table->string('category_id')->nullable()->index();    */
+    return [
+        'name' => $faker->name,
+        'url' => $faker->unique()->domainName,
+        'desc' => $faker->paragraph(3),
+        'approved' => $faker->randomElement([0,1]),
     ];
 });
