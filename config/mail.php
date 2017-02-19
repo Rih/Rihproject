@@ -56,7 +56,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'drigox90rih@example.com'),
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
@@ -85,7 +85,6 @@ return [
     */
 
     'username' => env('MAIL_USERNAME'),
-
     'password' => env('MAIL_PASSWORD'),
 
     /*
@@ -100,7 +99,7 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
-
+    'pretend' => true,
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings
