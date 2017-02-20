@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServicesTable extends Migration
+class CreateWebsitesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -23,7 +23,7 @@ class CreateServicesTable extends Migration
   PRIMARY KEY  (`id`),
   UNIQUE KEY `name` (`name`)
         */
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('websites', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',50)->unique();
             $table->string('url',100)->nullable();
@@ -41,7 +41,7 @@ class CreateServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('websites');
     
     }
 }

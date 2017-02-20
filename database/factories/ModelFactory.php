@@ -26,13 +26,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 
 
-$factory->define(App\Services::class, function (Faker\Generator $faker) {
+$factory->define(App\Website::class, function (Faker\Generator $faker) {
 /*
             $table->string('category_id')->nullable()->index();    */
     return [
         'name' => $faker->name,
         'url' => $faker->unique()->domainName,
-        'desc' => $faker->paragraph(3),
+        'desc' => $faker->paragraph(2),
         'approved' => $faker->randomElement([0,1]),
     ];
 });

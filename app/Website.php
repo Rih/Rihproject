@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Services extends Model
+use \App\User;
+class Website extends Model
 {
     //
 
@@ -13,7 +13,7 @@ class Services extends Model
      *
      * @var array
      */
-    protected $table = "services";
+    protected $table = "websites";
   
     protected $fillable = [
         'name','url','desc','approved','category_id',
@@ -27,4 +27,8 @@ class Services extends Model
     protected $hidden = [
   		
     ];
+
+    public function users(){
+        return $this->belongsToMany('App\User');
+    }
 }

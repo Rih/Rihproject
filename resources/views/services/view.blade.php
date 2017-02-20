@@ -1,14 +1,13 @@
 @extends('layouts.erp')
 
-@section('title', 'Usuarios')
+@section('title', 'Services')
 
 @section('content')
 
-hola
 <ul>
-@foreach($users as $user)
+@foreach($services as $service)
 <li>
-	{{ $user->email }}	
+	{{ $service->name }}	
 </li>
 @endforeach
 </ul>
