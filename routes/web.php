@@ -19,6 +19,16 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/users', 'UserController@index');
 
-Route::get('/services', 'ServicesController@index');
+Route::resource('users','UserController');
+//Route::get('/users', 'UserController@index');
+
+Route::resource('websites','WebsiteController');
+
+
+//Route::get('websites', 'WebsiteController@index')->name('websites');
+
+Route::get('/datatables',['uses'=>'DatatablesController@getIndex', 'as' => 'datatables']);
+Route::get('datatables/{data}',['uses'=>'DatatablesController@anyData', 'as' => 'datatables.data']);
+
+//Route::get('/services', 'WebsiteController@index');

@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Website;
-class ServicesController extends Controller
+use Yajra\Datatables\Datatables;
+class WebsiteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,11 +14,22 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $services = Website::all();
-
-        return view('services.view', compact('services',$services));
+        //$services = Website::paginate(10);
+        //dd($services);
+        return view('websites.view');
     }
 
+    public function getIndex()
+    {
+        //$services = Website::paginate(10);
+        //dd($services);
+        return view('websites.view');
+    }
+
+    public function paginateWebsiteData(){
+
+         return Datatables::of(Website::query())->make(true);
+    }
     /**
      * Show the form for creating a new resource.
      *
